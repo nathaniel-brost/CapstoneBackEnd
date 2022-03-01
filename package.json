@@ -1,0 +1,23 @@
+{
+  "name": "capstonebackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node": "^17.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathaniel-brost/CapstoneBackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathaniel-brost/CapstoneBackEnd/issues"
+  },
+  "homepage": "https://github.com/nathaniel-brost/CapstoneBackEnd#readme"
+}
