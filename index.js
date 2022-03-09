@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 
 const users = require('./routes/users');
+const items = require('./routes/items');
 const auth = require('./routes/auth');
 
 
@@ -15,6 +16,7 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use('/api/users', users);
+app.use('/api/items', items);
 app.use('/api/auth', auth);
 
 
