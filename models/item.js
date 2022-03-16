@@ -9,10 +9,10 @@ const itemSchema = new mongoose.Schema({
     quantityOwned: {type: Number, required: true, default: 0},
     quantityNeeded: {type: Number, required: true, default: 0},
     costPer: {type: Number},
-    dateBought: {type: Date, required: true},
-    futureMonth: {type: String, required: true},
-    notes: {type: String, maxlength: 1000}
-
+    dateBought: {type: Date},
+    futureBuy: {type: Date},
+    notes: {type: String, maxlength: 1000},
+    // ownedBy: {type: mongoose.Types.ObjectId, ref: 'User'}
 })
 
 // create item model
@@ -26,7 +26,7 @@ function validateItem(item) {
         quantityOwned: Joi.number().required(),
         quantityNeeded: Joi.number().required(),
         costPer: Joi.number(),
-        dateBought: Joi.date().required(),
+        dateBought: Joi.date(),
         futureMonth: Joi.string().required(),
         notes: Joi.string().max(1000),
 
@@ -35,4 +35,5 @@ function validateItem(item) {
 };
 
 exports.Item = Item; 
+exports.itemSchema = itemSchema;
 exports.validateItem = validateItem;

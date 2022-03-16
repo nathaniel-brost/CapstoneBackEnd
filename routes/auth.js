@@ -6,7 +6,8 @@ const { User } = require('../models/user'); //User model and validation
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+//login
+router.post('/login', async (req, res) => {
     try {
         //Reject login if email or password do not pass joi validation
         const { error } = validateLogin(req.body);
@@ -29,6 +30,7 @@ router.post('/', async (req, res) => {
         return res.status(500).send(`Internal Server Error: ${err}`)
     }
 });
+
 function validateLogin(req) {
     const schema = Joi.object({
         email: Joi.string().min(5).max(255).required().email(),

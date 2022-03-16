@@ -8,9 +8,13 @@ const users = require('./routes/users');
 const items = require('./routes/items');
 const auth = require('./routes/auth');
 
+const fs = require('fs');
+const path = require('path');
 
 // connect to db
 connectDB();
+
+
 
 // app initialization and middleware
 app.use(cors());
@@ -20,6 +24,8 @@ app.use('/api/items', items);
 app.use('/api/auth', auth);
 
 
+app.use('uploads/images', express.static(path.join('uploads', 'images')));
+app.use('uploads/items', express.static(path.join('uploads', 'items')));
 
 
 
